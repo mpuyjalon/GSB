@@ -1,0 +1,8 @@
+gsb_gestion_parc_autos:
+    resource: "@GSBGestionParcAutosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# app/config/routing.yml
+mdv_core:
+    resource: "@MDVCoreBundle/Resources/config/routing.yml"
+    prefix:   /

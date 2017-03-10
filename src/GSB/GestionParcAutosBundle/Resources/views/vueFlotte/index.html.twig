@@ -1,0 +1,46 @@
+<html>
+<body>
+{% block stylesheets %}       
+        <link rel="stylesheet" href="{{ asset('js/jquery-ui/jquery-ui.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('js/bootstrap/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('js/bootstrap/css/bootstrap-theme.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('js/bootstrap-dialog/css/bootstrap-dialog.min.css') }}" /> 
+        <link rel="stylesheet" href="{{ asset('js/bootstrap_datepicker/css/bootstrap-datepicker3.min.css') }}" />        
+        <link rel="stylesheet" href="{{ asset('js/bootstrap/css/ie10-viewport-bug-workaround.css') }}" />
+        <link rel="stylesheet" href="{{ asset('js/fancybox/source/jquery.fancybox.css?v=2.1.5') }}" />
+        <link rel="stylesheet" href="{{ asset('js/font-awesome-4.6.3/css/font-awesome.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('js/font-awesome-4.6.3/css/font-awesome-animation.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/global.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/normalize.css') }}" />
+        {% endblock %}
+<h1>Visualisation de la flotte</h1>
+
+<table class="table table-striped">
+    <tr>
+     <th>Immatriculation</th>
+     <th>Kilometrage</th>
+    </tr>
+    {% for vehicule in listeVehicule %}
+     <tr>
+      <td>{{ vehicule.immatveh }}</td>
+      <td>{{ vehicule.kilometrageVeh }}</td>
+      <td><a class='btn btn-primary' href="{{ path('gsb_gestion_parc_autos_caracteristiques',{'id': vehicule.immatVeh}) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+      
+     </tr>
+    {% endfor %}
+  </table>
+  {% block javascripts %}
+		<script src="{{ asset('js/jquery-2.2.0.min.js') }}"></script>
+		<script src="{{ asset('js/jquery-ui/jquery-ui.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-confirmation/bootstrap-confirmation.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-dialog/js/bootstrap-dialog.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap_datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap_datepicker/locales/bootstrap-datepicker.fr.min.js') }}" charset="UTF-8"></script>
+		<script src="{{ asset('js/bootstrap/js/ie10-viewport-bug-workaround.js') }}"></script>
+		<script src="{{ asset('js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+		<script src="{{ asset('js/fancybox/source/jquery.fancybox.pack.js') }}"></script>
+		<script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

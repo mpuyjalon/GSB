@@ -1,0 +1,7 @@
+gsb_gestion_parc_autos_homepage:
+    path:     /visualFlotte
+    defaults: { _controller: GSBGestionParcAutosBundle:vueFlotte:index }
+
+gsb_gestion_parc_autos_caracteristiques:
+    path:     /visualFlotte/caracteristiques/{id}
+    defaults: { _controller: GSBGestionParcAutosBundle:vueFlotte:caracteristiques }

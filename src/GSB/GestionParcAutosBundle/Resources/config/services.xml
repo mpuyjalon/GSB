@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<services>
+	
+<!--
+		<service id="actes.dossier.listener" class="Net15\ActesBundle\Listener\DossierListener">
+			<argument type="service" id="doctrine.orm.entity_manager"></argument>
+			<argument type="service" id="mailer"></argument>
+			<argument type="service" id="templating"></argument>
+			<argument>%net15_actes.email_envoi%</argument>
+			<argument>%net15_actes.url_site%</argument>
+			
+			<tag name="kernel.event_listener" event="actes.dossier.listener.ajouter_fichier" method="ajouter_fichier" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.supprimer_fichier" method="supprimer_fichier" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.ajouter_commentaire" method="ajouter_commentaire" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.supprimer_commentaire" method="supprimer_commentaire" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.statut" method="statut" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.valide_fichier" method="valide_fichier" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.ajouter_utilisateur" method="ajouter_utilisateur" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.supprimer_utilisateur" method="supprimer_utilisateur" />
+			<tag name="kernel.event_listener" event="actes.dossier.listener.ajouter_role" method="ajouter_role" />
+		</service>
+		
+		 <service id="actes.utilisateurs.listener" class="Net15\ActesBundle\Listener\UserListener">
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+            <argument type="service" id="mailer"></argument>
+            <argument type="service" id="templating"></argument>
+            <argument>%net15_actes.email_envoi%</argument>
+            <argument>%net15_actes.url_site%</argument>
+            
+            <tag name="kernel.event_listener" event="actes.utilisateurs.listener.creation_compte" method="creation_compte" />
+        </service>
+		
+		<service id="actes.ArticleDossierCategorie" class="Net15\ActesBundle\Services\ArticleDossierCategorieService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+		
+		<service id="actes.ArticleDossierPiece" class="Net15\ActesBundle\Services\ArticleDossierPieceService">
+		  <argument type="service" id="doctrine.orm.entity_manager"></argument>
+		</service>
+		
+		<service id="actes.Dossier" class="Net15\ActesBundle\Services\DossierService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+          <argument type="service" id="event_dispatcher"></argument>
+          <argument type="service" id="fos_user.util.token_generator"></argument>
+          <argument type="service" id="fos_user.user_manager"></argument>
+           <argument>%fichiers_directory%</argument>
+           <argument>%net15_actes.allow_mime_type%</argument>
+           <argument>%net15_actes.ftp_directory%</argument>
+           <argument>%net15_actes.ftp_domaine%</argument>
+           <argument>%net15_actes.commandes_directory%</argument>
+        </service>
+		
+		<service id="actes.DossierPiece" class="Net15\ActesBundle\Services\DossierPieceService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+          <argument>%net15_actes.allow_mime_type%</argument>
+          <argument>%fichiers_directory%</argument>
+        </service>
+        
+        <service id="actes.DossierUser" class="Net15\ActesBundle\Services\DossierUserService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+        
+        <service id="actes.Role" class="Net15\ActesBundle\Services\RoleService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+        
+        <service id="actes.FichierJustificatif" class="Net15\ActesBundle\Services\FichierJustificatifService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+           <argument>%fichiers_directory%</argument>
+        </service>
+        
+		<service id="actes.utilisateurs" class="Net15\ActesBundle\Services\UserService">
+          <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+-->
+
+		<service id="mdv.Vehicule" class="GSB\GestionParcAutosBundle\Services\VehiculeService">
+		  <argument type="service" id="doctrine.orm.entity_manager"></argument>
+		</service>
+		
+		
+	</services>
+</container>
