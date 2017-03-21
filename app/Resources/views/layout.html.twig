@@ -1,15 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang='fr'>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-        <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
-        <title>{% block title %}B&B Notaires - Plateforme d'échange{% endblock %}</title>
         
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-       	    
         {% block stylesheets %}        
         <link rel="stylesheet" href="{{ asset('js/jquery-ui/jquery-ui.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('js/bootstrap/css/bootstrap.min.css') }}" />
@@ -26,64 +18,7 @@
     <body>
     
     
-    
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}   
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ path('net15_actes_homepage') }}">B&B Notaires - Plateforme d'échange</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          
-          <div class="navbar-form navbar-right">            
-            <div class="navbar-login-block">
-        	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        		<span class="navbar-username">{{ app.user.showFullName }}</span>
-                <a class="btn btn-default" href="{{ path('fos_user_profile_edit') }}" title="Paramètres de mon compte"><span class="fa fa-cog" aria-hidden="true" ></span></a>
-                <a class="btn btn-primary" href="{{ path('fos_user_security_logout') }}" title="{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}">
-                    <span class="fa fa-times" aria-hidden="true" ></span>
-                </a>
-            {% else %}
-                <a class="btn btn-primary btn-success" href="{{ path('fos_user_security_login') }}" role="button" ><span class="fa fa-user" aria-hidden="true"></span> Se connecter</a>
-            {% endif %}
-            
-            {% if is_granted('ROLE_ADMIN') %} 
-            	<a class="btn btn-info" href="{{ path('net15_actes_administration') }}" role="button" title="Administration"><span class="fa fa-home" aria-hidden="true" ></span></a>
-            {% endif %}
-           </div>
-          </div>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-    
-    <div class="container">
-    
-    
-    
     {% block body %}{% endblock %}
-       <footer>
-       
-       </footer>
-     </div> <!-- /container --> 
-    {% else %}
-     
-   <div class="jumbotron">
-   <div class="container">
-   <br/>
-   <img src="{{ asset('logos/logo.png') }}" />
-  <h2>Plateforme d'échange</h2>
-  <br/>
-  <p><a class="btn btn-primary btn-success" href="{{ path('fos_user_security_login') }}" role="button" ><span class="fa fa-user" aria-hidden="true"></span> Se connecter</a></p>
-  </div>
-</div>
-    {% endif %}
-      
      
     
     {% block javascripts %}
